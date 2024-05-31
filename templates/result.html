@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carso - Prediction Result</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #f0f0f0;
+            overflow: hidden; /* Prevent scroll for animation */
+        }
+        header {
+            background-color: #1e1e1e;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            color: #f39c12;
+        }
+        header nav a {
+            color: #f0f0f0;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+        main {
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .result-section {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+            overflow: hidden; /* Prevent overflow from animation */
+        }
+        .result-section h2 {
+            color: #f39c12;
+        }
+        .result-section p {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .car-animation {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 100px;
+            background-color: #f39c12;
+            border-radius: 20px 20px 10px 10px;
+            animation: driveIn 3s ease-in-out forwards;
+        }
+        .car-animation::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 160px;
+            height: 60px;
+            background-color: #121212;
+            border-radius: 10px;
+        }
+        .wheel {
+            position: absolute;
+            bottom: -10px;
+            width: 40px;
+            height: 40px;
+            background-color: #121212;
+            border-radius: 50%;
+        }
+        .wheel::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: #f39c12;
+            border-radius: 50%;
+        }
+        .wheel-left {
+            left: 20px;
+        }
+        .wheel-right {
+            right: 20px;
+        }
+        @keyframes driveIn {
+            0% { transform: translateX(-150%) translateY(-100px) scale(0.5); }
+            50% { transform: translateX(-50%) translateY(-100px) scale(1); }
+            100% { transform: translateX(-50%) translateY(0) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Carso</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="result-section">
+                <h2>Car Price Prediction</h2>
+                <p>Your car's predicted price is:</p>
+                <p id="price-result">{{ car_price }}</p>
+                <div class="car-animation">
+                    <div class="wheel wheel-left"></div>
+                    <div class="wheel wheel-right"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
