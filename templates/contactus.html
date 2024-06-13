@@ -8,35 +8,42 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #121212; /* Dark background */
-            color: #ffffff; /* White text */
-            animation: gradientChange 15s infinite alternate; /* Animated background */
+            background: url('https://img.freepik.com/free-photo/top-view-chat-bubbles-with-telephone-receiver-copy-space_23-2148796078.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: brightness(80%); /* Lighten the background image */
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        @keyframes gradientChange {
-            0% {
-                background-color: #121212;
-            }
-            50% {
-                background-color: #1f1f1f;
-            }
-            100% {
-                background-color: #121212;
-            }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3); /* Lightened overlay */
+            z-index: 1;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            width: 90%;
+            padding: 40px;
             text-align: center;
+            background: rgba(0, 0, 0, 0.6); /* More transparent background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
         h1 {
             font-size: 3em;
-            color: #ff6f00; /* Orange */
+            color: #f0f0f0; /* Lighter grey for better contrast */
             margin-bottom: 20px;
-            animation: pulse 2s infinite alternate;
         }
 
         p {
@@ -44,17 +51,8 @@
             margin: 0;
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.1);
-            }
-        }
-
         form {
-            margin-top: 30px;
+            margin-top: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -65,12 +63,13 @@
         select,
         textarea {
             width: 100%;
-            padding: 10px;
-            margin: 5px 0;
+            padding: 15px;
+            margin: 10px 0;
             border: none;
             border-radius: 5px;
-            background-color: #1f1f1f; /* Darker background */
-            color: #ffffff; /* White text */
+            background-color: rgba(255, 255, 255, 0.2); /* Slightly less transparent for better readability */
+            color: #ffffff;
+            font-size: 1em;
         }
 
         textarea {
@@ -78,34 +77,37 @@
             height: 150px;
         }
 
+        input::placeholder, textarea::placeholder {
+            color: #ffffff; /* White placeholder text */
+        }
+
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #ff6f00; /* Orange */
-            color: #ffffff; /* White text */
+            padding: 15px 30px;
+            background-color: #d3d3d3; /* Very light grey */
+            color: #000000; /* Black text */
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             margin-top: 20px;
-            animation: pulseButton 2s infinite alternate;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
         }
 
         .btn:hover {
-            background-color: #ff8e53; /* Lighter orange on hover */
-            transform: scale(1.1);
+            background-color: #f0f0f0; /* Slightly darker grey on hover */
+            transform: scale(1.05);
         }
 
-        @keyframes pulseButton {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.05);
-            }
+        select option {
+            color: #000; /* Black text for dropdown options */
+            background-color: #fff; /* White background for better readability */
         }
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="container">
         <h1>Carsn</h1>
         <p>Contact Us</p>
@@ -117,6 +119,15 @@
                 <option value="USA">USA</option>
                 <option value="Canada">Canada</option>
                 <option value="UK">UK</option>
+                <option value="Australia">Australia</option>
+                <option value="India">India</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+                <option value="Japan">Japan</option>
+                <option value="China">China</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Mexico">Mexico</option>
+                <option value="South Africa">South Africa</option>
                 <!-- Add more options as needed -->
             </select>
             <input type="text" name="state" placeholder="Your State" required>
