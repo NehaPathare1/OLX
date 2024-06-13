@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Prediction Form</title>
     <style>
-        /* Add your CSS styles here */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background: url('https://images5.alphacoders.com/905/905980.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #f0f0f0;
         }
 
         .container {
             max-width: 600px;
             margin: 50px auto;
-            background-color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #f0f0f0;
         }
 
         h1 {
@@ -31,6 +33,7 @@
             display: block;
             margin-bottom: 10px;
             font-weight: bold;
+            color: #f0f0f0;
         }
 
         select, input {
@@ -40,13 +43,14 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
+            color: #000;
         }
 
         button {
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
-            color: #fff;
+            background-color: #d3d3d3;
+            color: #000;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -54,16 +58,16 @@
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #b0b0b0;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Car Prediction Form</h1>
-        <form id="carPredictionForm" action = "/check" method = "POST">
+        <form id="carPredictionForm" action="/check" method="POST">
             <label for="make">Make:</label>
-            <select id="make" name="make">
+            <select id="make" name="make" required>
                 <option value="Toyota">Toyota</option>
                 <option value="Suzuki">Suzuki</option>
                 <option value="Daihatsu">Daihatsu</option>
@@ -75,58 +79,117 @@
                 <option value="FAW">FAW</option>
                 <option value="Mercedes">Mercedes</option>
                 <option value="Chevrolet">Chevrolet</option>
+                <option value="Ford">Ford</option>
+                <option value="BMW">BMW</option>
+                <option value="Audi">Audi</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Mazda">Mazda</option>
+                <option value="Subaru">Subaru</option>
+                <option value="Lexus">Lexus</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Land Rover">Land Rover</option>
+                <option value="Porsche">Porsche</option>
+                <!-- Add other make options as needed -->
             </select>
 
             <label for="model">Model:</label>
-            <select id="model" name="model">
+            <select id="model" name="model" required>
                 <option value="Passo">Passo</option>
                 <option value="Ravi">Ravi</option>
                 <option value="Bolan">Bolan</option>
                 <option value="Move">Move</option>
                 <option value="Swift">Swift</option>
-                <!-- Add other model options here -->
+                <option value="Corolla">Corolla</option>
+                <option value="Civic">Civic</option>
+                <option value="Accord">Accord</option>
+                <option value="City">City</option>
+                <option value="Alto">Alto</option>
+                <option value="Cultus">Cultus</option>
+                <option value="Vitz">Vitz</option>
+                <option value="Camry">Camry</option>
+                <option value="Land Cruiser">Land Cruiser</option>
+                <option value="Prado">Prado</option>
+                <option value="Hiace">Hiace</option>
+                <option value="Hilux">Hilux</option>
+                <option value="Fortuner">Fortuner</option>
+                <option value="Aqua">Aqua</option>
+                <option value="Prius">Prius</option>
+                <option value="Lancer">Lancer</option>
+                <option value="Outlander">Outlander</option>
+                <option value="Mirage">Mirage</option>
+                <option value="Tucson">Tucson</option>
+                <option value="Santa Fe">Santa Fe</option>
+                <option value="Elantra">Elantra</option>
+                <!-- Add other model options as needed -->
             </select>
 
             <label for="year">Year:</label>
-            <select id="year" name="year">
+            <select id="year" name="year" required>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
                 <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
                 <option value="2018">2018</option>
-                <!-- Add other year options here -->
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <!-- Add other year options as needed -->
             </select>
 
             <label for="kms">KM's Driven:</label>
-            <input type="number" id="kms" name="kms" placeholder="Enter KM's Driven">
+            <input type="number" id="kms" name="kms" placeholder="Enter KM's Driven" required>
 
             <label for="fuel">Fuel:</label>
-            <select id="fuel" name="fuel">
+            <select id="fuel" name="fuel" required>
                 <option value="Petrol">Petrol</option>
                 <option value="CNG">CNG</option>
-                <!-- Add other fuel options here -->
+                <option value="Diesel">Diesel</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Electric">Electric</option>
+                <!-- Add other fuel options as needed -->
             </select>
 
             <label for="city">Registration City:</label>
-            <select id="city" name="city">
+            <select id="city" name="city" required>
                 <option value="Unregistered">Unregistered</option>
                 <option value="Karachi">Karachi</option>
-                <!-- Add other city options here -->
+                <option value="Lahore">Lahore</option>
+                <option value="Islamabad">Islamabad</option>
+                <option value="Peshawar">Peshawar</option>
+                <option value="Quetta">Quetta</option>
+                <option value="Faisalabad">Faisalabad</option>
+                <option value="Multan">Multan</option>
+                <option value="Sialkot">Sialkot</option>
+                <!-- Add other city options as needed -->
             </select>
 
             <label for="documents">Car Documents:</label>
-            <select id="documents" name="documents">
+            <select id="documents" name="documents" required>
                 <option value="Original">Original</option>
                 <option value="Duplicate">Duplicate</option>
+                <option value="None">None</option>
+                <!-- Add other document options as needed -->
             </select>
 
             <label for="assembly">Assembly:</label>
-            <select id="assembly" name="assembly">
+            <select id="assembly" name="assembly" required>
                 <option value="Imported">Imported</option>
                 <option value="Local">Local</option>
+                <!-- Add other assembly options as needed -->
             </select>
 
             <label for="transmission">Transmission:</label>
-            <select id="transmission" name="transmission">
+            <select id="transmission" name="transmission" required>
                 <option value="Automatic">Automatic</option>
                 <option value="Manual">Manual</option>
+                <!-- Add other transmission options as needed -->
             </select>
 
             <button type="submit">Predict</button>

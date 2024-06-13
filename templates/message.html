@@ -8,58 +8,54 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #121212; /* Dark background */
-            color: #ffffff; /* White text */
-            animation: gradientChange 15s infinite alternate; /* Animated background */
+            background: url('https://img.freepik.com/free-photo/top-view-chat-bubbles-with-telephone-receiver-copy-space_23-2148796078.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #000000; /* Black text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        @keyframes gradientChange {
-            0% {
-                background-color: #121212;
-            }
-            50% {
-                background-color: #1f1f1f;
-            }
-            100% {
-                background-color: #121212;
-            }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.6); /* Light grey overlay */
+            z-index: 1;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            width: 90%;
+            padding: 40px;
             text-align: center;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
             font-size: 3em;
-            color: #ff6f00; /* Orange */
+            color: #4f4f4f; /* Dark grey */
             margin-bottom: 20px;
-            animation: pulse 2s infinite alternate;
         }
 
         p {
             font-size: 1.2em;
             margin: 0;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.1);
-            }
+            color: #4f4f4f; /* Dark grey */
         }
 
         .smiley {
             font-size: 3em;
             margin-top: 20px;
-        }
-
-        .smiley::before {
-            content: "\1F603"; /* Unicode for smiling face */
+            color: #ff6f00; /* Orange */
+            animation: spin 2s linear infinite;
         }
 
         @keyframes spin {
@@ -73,10 +69,11 @@
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="container">
         <h1>Carsn</h1>
         <p>Thank you for contacting us!</p>
-        <div class="smiley" style="animation: spin 2s linear infinite;"></div>
+        <div class="smiley">&#128515;</div> <!-- Unicode for smiling face -->
     </div>
 </body>
 </html>
