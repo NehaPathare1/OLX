@@ -69,7 +69,7 @@
         }
         .car-animation {
             position: absolute;
-            bottom: 0;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
             width: 200px;
@@ -113,8 +113,8 @@
             right: 20px;
         }
         @keyframes driveIn {
-            0% { transform: translateX(-150%) translateY(-100px) scale(0.5); }
-            50% { transform: translateX(-50%) translateY(-100px) scale(1); }
+            0% { transform: translateX(-150%) translateY(0) scale(0.5); }
+            50% { transform: translateX(-50%) translateY(0) scale(1); }
             100% { transform: translateX(-50%) translateY(0) scale(1); }
         }
     </style>
